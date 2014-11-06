@@ -1,7 +1,7 @@
 autoconnect-unlp-wifi
 =====================
 
-I'm a bash script wich keeps you logged in UNLP's WiFi network, saving you from:
+I'm a bash script which keeps you logged in UNLP's WiFi network, saving you from:
 - having to log in all the time
 - writing internet-internet all the time
 - being unhappy
