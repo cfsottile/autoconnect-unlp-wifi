@@ -1,0 +1,19 @@
+#!/bin/bash
+
+curl --version &>/dev/null
+if [ $? -ne 0 ]; then
+	echo "No se pudo ejecutar 'curl', asegurate de que el paquete esté instalado."
+	echo
+	echo "Presioná Enter para salir"
+	read
+	exit 1
+fi
+
+isRunning=$[ $(ps aux | grep -v grep | grep auto-connect.sh | wc -l) > 0 ]
+
+if [ $isRunning ]
+then
+    "$(dirname $0)/kill-auto-connect" &>/dev/null
+fi
+
+nohup bash "$(dirname $0)/auto-connect.sh" &>/dev/null &
